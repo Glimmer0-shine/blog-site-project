@@ -19,6 +19,7 @@
 * **articleCardsRender.js**: Home画面内の「最近の記事」欄に表示させる記事の情報を取得する。
 * **contactToggle.js**: Home画面下部にある擬似問い合わせフォームの表示アニメーション。
 * **articleListFunction.js**: 記事一覧画面の記事情報の取得と表示、そのアニメーション。
+* **ArticlesListAnimation.js**: 記事一覧画面の記事情報の取得と表示、そのアニメーション。
 
 * **vivus.min.js**: 現時点での設定では、index.html内コメントアウトにより使えないが、今後SVGパスによるローディング時のアニメーションを搭載予定のため。
 
