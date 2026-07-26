@@ -1,6 +1,10 @@
 #テスト用ファイル
 style_1.css
 style_2.css
+loadingAnimation.js
+articleListPagination.js
+ArticlesListAnimation.js
 
 #管理用フォルダ
 old/
+images/old/

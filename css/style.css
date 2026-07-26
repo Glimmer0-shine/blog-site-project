@@ -47,7 +47,7 @@ html {
 .top {
   width: 100%;
   height: 700px;
-  background-image: url(images/image1.jpg);
+  background-image: url(../images/image5.png);
   /* background-image: url(images/背景画像6.png); */
   background-size: cover;
   
@@ -189,7 +189,7 @@ html {
 
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), /* 白地の背景（文字を読みやすく遮る膜） */
-    url(images/背景画像10.png);                                         /* 生成した緑の画像 */
+    url(../images/背景画像10.png);                                         /* 生成した緑の画像 */
   
   background-size: cover;
   background-position: center;
