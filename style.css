@@ -1,0 +1,697 @@
+/* ==========================================
+   共通・リセットCSS
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* ローディング画面 */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#titleText {
+  font-size: 50.8px;
+  font-family: 'Times New Roman';
+  stroke-width: 30;
+  white-space: pre;
+}
+
+#titleMask {
+  fill: none;
+  stroke-width: 25;
+  stroke: #fff;
+  fill-opacity: 1;
+  stroke-dasharray: none;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ==========================================
+   トップ・ヘッダー部分
+   ========================================== */
+.top {
+  width: 100%;
+  height: 700px;
+  background-image: url(images/image1.jpg);
+  /* background-image: url(images/背景画像6.png); */
+  background-size: cover;
+  
+  background-position: center;
+  background-attachment: fixed;
+  /* background-attachment: scroll; */
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(20deg, rgba(12, 213, 12, 0.5), rgba(95, 236, 239, 0.5));
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  
+  /* 【改善】中央揃えから「下揃え」に変更 */
+  align-items: flex-end;           
+  
+  /* 【改善】下端にぴったりくっつけるための下パディング、右端の余白を多めに(50px) */
+  padding: 0 50px 0px 30px;        
+  z-index: 999;
+}
+
+.siteName {
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 7rem; /* スマホサイズ */
+  /* position: absolute;
+  top: 10px;
+  left: 10px; */
+  text-decoration: none;
+  line-height: 1;  /* 文字の余計な上下余白を消して下端に密着させる */
+  margin-bottom: -1.2rem;
+}
+
+.reader-container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* スマホの三本ラインボタン用の下マージン微調整 */
+  margin-bottom: 25px; 
+}
+
+.three-lines-reader {
+  position: relative;
+  width: 30px;
+  height: 40px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.hr1, .hr2, .hr3 {
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+}
+.hr1 { top: 5px; }
+.hr2 { top: 15px; }
+.hr3 { top: 25px; }
+
+.menu-container {
+  width: 200px;
+  height: 400px;
+  background: linear-gradient(60deg, rgba(12, 213, 12, 1), rgba(95, 236, 239, 1));
+  display: none;
+  position: absolute; 
+  top: 50px;
+  right: 0;
+  z-index: 4;
+}
+
+.menu-container nav {
+  margin-top: 50px;
+  margin-left: 15px;
+}
+
+.menu-container nav ul li {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.menu-container nav ul li a {
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.menu-container.active {
+  display: block;
+  z-index: 6;
+}
+
+/* メインタイトルコンテナ */
+.textContainer {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  z-index: 1;
+}
+
+.top h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-size: 4rem;
+}
+
+.text2 {
+  transform: translateX(20px);
+}
+
+.top h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  margin-top: 50px;
+  font-size: 2rem;
+}
+
+/* ==========================================
+   メインコンテンツ部分
+   ========================================== */
+.parent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 150px;
+
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), /* 白地の背景（文字を読みやすく遮る膜） */
+    url(images/背景画像10.png);                                         /* 生成した緑の画像 */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* コンテンツと一緒にスクロール */
+}
+
+/* サイト紹介 */
+.siteIntroduction {
+  width: 90%;
+  max-width: 1100px;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  margin-bottom: 100px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.siteIntroduction h1 {
+  display: inline-block;
+  text-decoration: underline rgb(68, 240, 68);
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 7.5rem;
+  margin-bottom: 50px;
+}
+
+.siteIntroduction h2, .siteIntroduction h4 {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 5rem;
+}
+
+/* アニメーション用テキストの共通設定 */
+.textAnimation {
+  font-size: 5rem;
+  font-family: "Times New Roman", 游明朝, YuMincho, serif;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: opacity 2s;
+  width: 90%;
+  max-width: 1100px;
+}
+
+.textAnimation.active {
+  opacity: 1;
+}
+
+#RecentArticles { margin-top: 50px; text-align: left; }
+.box1 { margin-top: 20px; }
+#Portfolio { margin-top: 250px; text-align: right; }
+.box2 { margin-top: 20px; }
+#Contact { margin-top: 250px; text-align: center; }
+.box3 { margin-top: 20px; }
+
+/* コンテンツボックスの共通設定 */
+.box1, .box2, .box3 {
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 68, 157, 0.5);
+  transition: opacity 1s, width 2s;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1.active, .box2.active, .box3.active {
+  width: 90%;
+  opacity: 1;
+}
+
+/* ------------------------------------------
+   【改善】box1（記事一覧）とカードのスマホ版設定
+   ------------------------------------------ */
+.box1 {
+  height: auto; /* 【変更】縦並びに対応するため高さを自動可変に */
+  padding: 20px;
+}
+
+.RecentArticlesBox {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column; /* 【変更】スマホでは矢印とカードを縦に並べる */
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.articleContainer {
+  display: flex;
+  flex-direction: column; /* 【変更】スマホではカード同士を縦に並べる */
+  gap: 1.5rem;
+  width: 100%;
+  align-items: center;
+}
+
+.card {
+  width: 100%; 
+  max-width: 400px;           /* 【変更】スマホでは横幅いっぱいの横長カード */
+  height: auto;           /* 【変更】高さは中身に合わせる */
+  min-height: 100px;
+  background: white;
+  display: flex;
+  flex-direction: row;    /* 【変更】画像とタイトルを左右に並べる */
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0;              /* スマホ時は左右マージン不要 */
+  gap: 15px;              /* 画像とテキストの間の隙間 */
+}
+
+.card-img {
+  width: 80px;            /* 【変更】スマホでの画像サイズを固定 */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;     /* 画像の角も少し丸める */
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: left;       /* 【変更】左右並びなので左寄せに */
+  margin-top: 0;
+}
+
+/* 矢印ボタン（スマホ用） */
+.arrow {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* スマホでは矢印を上下の向きに見せるため、90度回転させる */
+#prevBtn .buttonText { transform: rotate(90deg); display: inline-block; }
+#nextBtn .buttonText { transform: rotate(90deg); display: inline-block; }
+
+.buttonText {
+  color: rgba(12, 213, 12);
+  font-size: 3rem;
+}
+
+.buttonText:hover {
+  color: #3E9CF2;
+  transform: scale(1.1);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  transition: color transform 0.5s;
+}
+
+/* ------------------------------------------
+   box2 & box3 設定
+   ------------------------------------------ */
+.box2 { height: 150px; }
+
+.profile-content {
+  width: 90%;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column; /* 【変更】スマホでは矢印とカードを縦に並べる */
+  /* justify-content: center; */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 関連リンクのボタン設定 */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+  max-width: 250px;
+}
+/* リンクボタンの個別カラー（文字色を統一しつつ、背景で個性を出す） */
+.link-item.github {
+  background-color: #24292e;
+  color: #ffffff;
+}
+.link-item.x-sns {
+  background-color: #111111;
+  color: #ffffff;
+}
+.link-item.blog {
+  background-color: rgba(12, 213, 12, 0.8);
+  color: #ffffff;
+}
+.link-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  opacity: 0.9;
+}
+.link-icon {
+  font-size: 2rem;
+}
+
+.GitHubText {
+  font-size: 1.8rem;
+}
+
+
+.box3 {
+  height: auto;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.ContactText {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.ContactFormButton {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background-color: #dbd9d9;
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin: 0.5em;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.ContactFormButton:hover {
+  background-color: #3E9CF2;
+  transform: scale(1.1);
+  transition: background-color transform 0.2s;
+}
+
+form {
+  display: inline-block;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  background-color: white;
+}
+
+p + p { margin-top: 1em; }
+
+label {
+  display: inline-block;
+  min-width: 90px;
+  text-align: right;
+  font-size: 1.4rem;
+}
+
+input, textarea {
+  font: 1em sans-serif;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  outline-style: solid;
+  outline-color: #000;
+}
+
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+.SubmitButton {
+  width: 100px;
+  height: 25px;
+  background-color: #dbd9d9;
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin: 0.5em;
+}
+
+#contactFormBody {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+  pointer-events: none;
+}
+
+#contactFormBody.active {
+  opacity: 1;
+  max-height: 1000px;
+  pointer-events: auto;
+}
+
+/* フッター */
+footer {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(20deg, rgba(12, 213, 12, 0.5), rgba(95, 236, 239, 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  font-size: 1.4rem;
+  color: white;
+}
+
+
+
+
+  /* ------------------------------------------
+     【改善】PC画面での記事カード・box1を元の「横並び」に戻す
+     ------------------------------------------ */
+@media screen and (min-width: 768px) {
+  .box1 {
+    height: 200px; /* PCでの元の高さを維持 */
+  }
+
+  .RecentArticlesBox {
+    flex-direction: row; /* 【PC戻し】左右矢印と中央カードを横並びに */
+    gap: 0;
+  }
+
+  .articleContainer {
+    flex-direction: row; /* 【PC戻し】カード同士を横並びに */
+    gap: 1rem;
+    width: auto;
+  }
+
+  .card {
+    width: 100px;        /* PCでの元のサイズに戻す */
+    height: 150px;
+    flex-direction: column; /* 【PC戻し】上画像・下タイトルの縦並び */
+    justify-content: center;
+    margin: 0 25px;
+    padding: 0;
+    gap: 0;
+  }
+
+  .card-img {
+    width: 100%;        /* PCでの元のサイズ感に自動調整 */
+    height: auto;
+    border-radius: 0;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+    text-align: center; /* 【PC戻し】中央揃え */
+    margin-top: 1rem;
+  }
+
+  /* 矢印を元の向きに戻す */
+  #prevBtn .buttonText { transform: none; }
+  #nextBtn .buttonText { transform: none; }
+
+
+  /* 4. PC用の配置位置（元のデザイン通り） */
+  .box1.active, .box2.active, .box3.active {
+    width: 70%;
+  }
+
+  #RecentArticles, .box1 {
+    align-self: flex-start;
+    margin-left: 10%;
+  }
+
+  #Portfolio, .box2 {
+    align-self: flex-end;
+    margin-right: 10%;
+  }
+
+  .about-container {
+    margin-top: 100px;
+  }
+  .about-section {
+    padding: 50px 40px;
+  }
+  .career-timeline li {
+    flex-direction: row; /* 横並びにしてスマートに */
+    gap: 30px;
+  }
+  .career-timeline .year {
+    min-width: 130px; /* 年数の幅を固定 */
+  }  
+}
+
+/* ==========================================
+   【PC向けのスタイル（画面幅 850px 以上で適用）】
+   ========================================== */
+@media screen and (min-width: 850px) { /* ← 条件を 850px 以上に変更しました */
+
+  .siteName {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 10rem; /* PCサイズ */
+    /* position: absolute;
+    top: 10px;
+    left: 10px; */
+    text-decoration: none;
+    line-height: 1;  /* 文字の余計な上下余白を消して下端に密着させる */
+    margin-bottom: -1.7rem;
+  }
+
+  /* 1. 3本ラインボタン（スマホ用）を完全に消す */
+  .three-lines-reader {
+    display: none !important;
+  }
+
+  /* 2. 親コンテナをヘッダーいっぱいに広げ、中身を「下詰め」にする */
+  .reader-container {
+    height: 100%;                /* ヘッダーの高さ100pxいっぱいに広げる */
+    justify-content: flex-end;   /* 中身（メニュー）を一番下（底辺）に沈める */
+  }
+
+  /* 3. メニューコンテナをPC用の横並びヘッダーにする */
+  .menu-container {
+    display: block !important; 
+    position: static;          
+    width: auto;
+    height: auto;
+    background: none;          
+    margin-bottom: -1rem;  
+  }
+
+  .menu-container nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* メニュー項目を横並びにする */
+  .menu-container nav ul {
+    display: flex;             
+    gap: 0; 
+  }
+
+  .menu-container nav ul li {
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  /* メニューの文字と縦線の設定 */
+  .menu-container nav ul li a {
+    color: white;
+    font-size: 2.5rem;       
+    text-decoration: none;
+    padding: 0 20px;          /* 文字の左右の余白（ぶつからないように少しタイトに調整） */
+    border-right: 1px solid rgba(255, 255, 255, 0.6); /* 項目間の縦線 */
+    line-height: 1;
+  }
+
+  /* 一番最後の項目（Contact）の右側の縦線は消す */
+  .menu-container nav ul li:last-child a {
+    border-right: none;
+  }
+
+  .menu-container nav ul li a:hover {
+    color: yellow;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+
+  /* 4. PC用の配置位置（元のデザインの通り） */
+  .box1.active, .box2.active, .box3.active {
+    width: 70%;
+  }
+
+  #RecentArticles, .box1 {
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-right: 0;
+  }
+
+  #Portfolio, .box2 {
+    align-self: flex-end;
+    margin-right: 10%;
+    margin-left: 0;
+  }
+
+  #Contact, .box3 {
+    align-self: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* @media screen and (min-width: 2000px) {
+  .top {
+    height: 900px; 
+    background-size: 2048px auto;
+  }
+  
+} */

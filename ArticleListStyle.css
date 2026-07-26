@@ -1,0 +1,497 @@
+/* リセットCSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/* ==========================================
+   トップ・ヘッダー部分
+   ========================================== */
+.top {
+  width: 100%;
+  height: 700px;
+  background-image: url(images/image1.jpg);
+  /* background-image: url(images/背景画像6.png); */
+  background-size: cover;
+  
+  background-position: center;
+  background-attachment: fixed;
+  /* background-attachment: scroll; */
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(20deg, rgba(12, 213, 12, 0.5), rgba(95, 236, 239, 0.5));
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  
+  /* 【改善】中央揃えから「下揃え」に変更 */
+  align-items: flex-end;           
+  
+  /* 【改善】下端にぴったりくっつけるための下パディング、右端の余白を多めに(50px) */
+  padding: 0 50px 0px 30px;        
+  z-index: 999;
+}
+
+.siteName {
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 7rem; /* スマホサイズ */
+  /* position: absolute;
+  top: 10px;
+  left: 10px; */
+  text-decoration: none;
+  line-height: 1;  /* 文字の余計な上下余白を消して下端に密着させる */
+  margin-bottom: -1.2rem;
+}
+
+.reader-container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* スマホの三本ラインボタン用の下マージン微調整 */
+  margin-bottom: 25px; 
+}
+
+.three-lines-reader {
+  position: relative;
+  width: 30px;
+  height: 40px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.hr1, .hr2, .hr3 {
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+}
+.hr1 { top: 5px; }
+.hr2 { top: 15px; }
+.hr3 { top: 25px; }
+
+.menu-container {
+  width: 200px;
+  height: 400px;
+  background: linear-gradient(60deg, rgba(12, 213, 12, 1), rgba(95, 236, 239, 1));
+  display: none;
+  position: absolute; 
+  top: 50px;
+  right: 0;
+  z-index: 4;
+}
+
+.menu-container nav {
+  margin-top: 50px;
+  margin-left: 15px;
+}
+
+.menu-container nav ul li {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.menu-container nav ul li a {
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.menu-container.active {
+  display: block;
+  z-index: 6;
+}
+
+/* メインタイトルコンテナ */
+.textContainer {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  z-index: 1;
+}
+
+.top h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-size: 4rem;
+}
+
+.text2 {
+  transform: translateX(20px);
+}
+
+.top h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  margin-top: 50px;
+  font-size: 2rem;
+}
+
+/* ==========================================
+   メインコンテンツ部分
+   ========================================== */
+.parent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 150px;
+
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), /* 白地の背景（文字を読みやすく遮る膜） */
+    url(images/背景画像10.png);                                         /* 生成した緑の画像 */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* コンテンツと一緒にスクロール */
+}
+
+
+@keyframes fade-out{
+    0% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
+
+.menu-container nav{
+    top: 20px;
+    left: 5px;
+    margin-top: 50px;
+    margin-left: 15px;
+}
+
+.menu-container nav ul li{
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.menu-container nav ul li a{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+.menu-container nav ul li a:hover{
+    color: yellow;
+    cursor: pointer;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    transition: color font-size text-shadow 0.5s;    
+}
+
+.menu-container.active {
+    display: block;
+    z-index: 6;
+    /* animation-name: fade-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out; */
+}
+
+@keyframes fade-in{
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.textContainer{
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    z-index: 1;
+}
+
+.top h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 4rem;
+}
+
+.top h2{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+/*コンテンツとなる部分のcss*/
+.frame{
+    width: 100%;
+    /* height: 1800px; */
+    height: auto;
+    /* background-color: white; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), /* 白地の背景（文字を読みやすく遮る膜） */
+        url(images/背景画像10.png);                                         /* 生成した緑の画像 */
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; 
+}
+
+.articleList{
+    font-size: 5rem;
+    letter-spacing: 2px;
+    font-family:"Times New Roman", 游明朝, YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho Pro", serif;
+
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* 該当のセレクタ部分を探して置き換えるか、追記してください */
+.search-area {
+    display: flex;
+    flex-direction: column;   /* 👈 基本は「縦並び」 */
+    align-items: center;       /* 👈 「中央揃え」 */
+    gap: 10px;                 /* 👈 入力欄、ボタン、ラジオボタンの間の隙間 */
+    width: 100%;
+    margin-bottom: 20px;       /* 下のコンテンツとの隙間 */
+}
+
+#searchInput {
+    width: 90%;                
+    max-width: 300px; 
+    padding: 8px 12px;         /* 👈 少し内側の余白を広げると、丸めたときに綺麗に見えます */
+    margin: 0;                 
+    
+    /* 👇 【追記】角を丸める設定 */
+    border: 1px solid #ccc;    /* 👈 枠線の色を少し薄いグレーに整える（お好みで） */
+    border-radius: 6px;        /* 👈 数字を大きくするほど丸くなります（4px〜8pxあたりがおすすめ） */
+}
+
+#searchButton {
+    padding: 8px 20px;         /* 👈 入力欄と高さを合わせるために上下を8pxに微調整 */
+    cursor: pointer;
+    
+    /* 👇 【追記】角を丸める設定 */
+    background-color: #555;    /* 👈 ボタンの背景色（例えばダークグレー。デザインに合わせて変えてください） */
+    color: white;              /* 👈 ボタンの文字色 */
+    border: none;              /* 👈 デフォルトの無骨な枠線を消す */
+    border-radius: 6px;        /* 👈 入力欄と同じ数字にすると統一感が出ます */
+    
+    transition: background-color 0.2s; /* ホバー時のアニメーション用 */
+}
+
+/* ついでにボタンにマウスを乗せた（ホバーした）ときの設定も入れるとさらに本格的になります */
+#searchButton:hover {
+    background-color: rgba(12, 213, 12);    /* 👈 マウスを乗せたときに少し明るくする */
+}
+
+#searchPOptions label{
+    font-size: 1.5rem;
+    top: 3px;
+    position: relative;
+}
+
+.radioButton{
+    top: 1.8px;
+    position: relative;
+}
+
+.textAnimation{
+    transition: all 0.2s;
+    opacity: 0;
+    transform: translateX(200px);
+}
+
+.textAnimation.active{
+    opacity: 1;
+    transition: opacity 2s;
+    transform: translateX(0px);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;    /* カードを中央に寄せたい場合 */
+    width: 100%;
+
+}
+
+
+.card{
+    width: 1px;
+    height: 100px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(10px); /* ぼかしエフェクト */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 68, 157, 0.5); /* 薄い影 */
+    margin: 20px;
+
+    transition: transform 0.1s linear;
+    will-change: transform;
+    opacity: 0;    
+}
+
+.card.active{
+    width: 90%;
+    max-width: 500px;
+    opacity: 1;
+    transition: opacity 1s, width 2s;    
+}
+
+.card.active:hover{
+    cursor: pointer;
+}
+
+
+.pagination button{
+    margin: 2px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.pagination button.active{
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination button:disabled{
+    background: #eee;
+    cursor: not-allowed;
+}
+
+
+/* footerのcss */
+footer{
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(20deg, rgba(12, 213, 12, 0.5), rgba(95, 236, 239, 0.5));
+    /* opacity: 0.5; */ 
+    
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+/* ==========================================
+   【PC向けのスタイル（画面幅 850px 以上で適用）】
+   ========================================== */
+@media screen and (min-width: 850px) { /* ← 条件を 850px 以上に変更しました */
+
+  .siteName {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 10rem; /* PCサイズ */
+    /* position: absolute;
+    top: 10px;
+    left: 10px; */
+    text-decoration: none;
+    line-height: 1;  /* 文字の余計な上下余白を消して下端に密着させる */
+    margin-bottom: -1.7rem;
+  }
+
+  /* 1. 3本ラインボタン（スマホ用）を完全に消す */
+  .three-lines-reader {
+    display: none !important;
+  }
+
+  /* 2. 親コンテナをヘッダーいっぱいに広げ、中身を「下詰め」にする */
+  .reader-container {
+    height: 100%;                /* ヘッダーの高さ100pxいっぱいに広げる */
+    justify-content: flex-end;   /* 中身（メニュー）を一番下（底辺）に沈める */
+  }
+
+  /* 3. メニューコンテナをPC用の横並びヘッダーにする */
+  .menu-container {
+    display: block !important; 
+    position: static;          
+    width: auto;
+    height: auto;
+    background: none;          
+    margin-bottom: -1rem;  
+  }
+
+  .menu-container nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* メニュー項目を横並びにする */
+  .menu-container nav ul {
+    display: flex;             
+    gap: 0; 
+  }
+
+  .menu-container nav ul li {
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  /* メニューの文字と縦線の設定 */
+  .menu-container nav ul li a {
+    color: white;
+    font-size: 2.5rem;       
+    text-decoration: none;
+    padding: 0 20px;          /* 文字の左右の余白（ぶつからないように少しタイトに調整） */
+    border-right: 1px solid rgba(255, 255, 255, 0.6); /* 項目間の縦線 */
+    line-height: 1;
+  }
+
+  /* 一番最後の項目（Contact）の右側の縦線は消す */
+  .menu-container nav ul li:last-child a {
+    border-right: none;
+  }
+
+  .menu-container nav ul li a:hover {
+    color: yellow;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  .search-area {
+    flex-direction: row;       /* 👈 画面が広いときは「横並び」に変える */
+    justify-content: center;   /* 👈 横並びの状態で「中央揃え」 */
+    align-items: center;       /* 👈 上下の中央を揃える */
+  }
+
+  #searchInput {
+    width: 300px;              /* PCのときは最大幅でどっしり固定 */
+  }
+
+}

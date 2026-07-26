@@ -1,0 +1,497 @@
+/* ==========================================
+   共通・リセットCSS
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* ローディング画面 */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#titleText {
+  font-size: 50.8px;
+  font-family: 'Times New Roman';
+  stroke-width: 30;
+  white-space: pre;
+}
+
+#titleMask {
+  fill: none;
+  stroke-width: 25;
+  stroke: #fff;
+  fill-opacity: 1;
+  stroke-dasharray: none;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ==========================================
+   トップ・ヘッダー部分
+   ========================================== */
+.top {
+  width: 100%;
+  height: 700px;
+  background-image: url(images/image1.jpg);
+  /* background-image: url(images/背景画像6.png); */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(20deg, rgba(12, 213, 12, 0.5), rgba(95, 236, 239, 0.5));
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  
+  /* 【改善】中央揃えから「下揃え」に変更 */
+  align-items: flex-end;           
+  
+  /* 【改善】下端にぴったりくっつけるための下パディング、右端の余白を多めに(50px) */
+  padding: 0 50px 0px 30px;        
+  z-index: 999;
+}
+
+.siteName {
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 7rem; /* スマホサイズ */
+  /* position: absolute;
+  top: 10px;
+  left: 10px; */
+  text-decoration: none;
+  line-height: 1;  /* 文字の余計な上下余白を消して下端に密着させる */
+  margin-bottom: -1.2rem;
+}
+
+.reader-container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* スマホの三本ラインボタン用の下マージン微調整 */
+  margin-bottom: 25px; 
+}
+
+.three-lines-reader {
+  position: relative;
+  width: 30px;
+  height: 40px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.hr1, .hr2, .hr3 {
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+}
+.hr1 { top: 5px; }
+.hr2 { top: 15px; }
+.hr3 { top: 25px; }
+
+.menu-container {
+  width: 200px;
+  height: 400px;
+  background: linear-gradient(60deg, rgba(12, 213, 12, 1), rgba(95, 236, 239, 1));
+  display: none;
+  position: absolute; 
+  top: 50px;
+  right: 0;
+  z-index: 4;
+}
+
+.menu-container nav {
+  margin-top: 50px;
+  margin-left: 15px;
+}
+
+.menu-container nav ul li {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.menu-container nav ul li a {
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.menu-container.active {
+  display: block;
+  z-index: 6;
+}
+
+/* メインタイトルコンテナ */
+.textContainer {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  z-index: 1;
+}
+
+.top h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-size: 4rem;
+}
+
+.text2 {
+  transform: translateX(20px);
+}
+
+.top h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  margin-top: 50px;
+  font-size: 2rem;
+}
+
+/* ==========================================
+   メインコンテンツ部分
+   ========================================== */
+.parent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 150px;
+
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), /* 白地の背景（文字を読みやすく遮る膜） */
+    url(images/背景画像10.png);                                         /* 生成した緑の画像 */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* コンテンツと一緒にスクロール */
+}
+
+
+
+
+/* フッター */
+footer {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(20deg, rgba(12, 213, 12, 0.5), rgba(95, 236, 239, 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  font-size: 1.4rem;
+  color: white;
+}
+
+
+
+
+/* ==========================================
+   【PC向けのスタイル（画面幅 850px 以上で適用）】
+   ========================================== */
+@media screen and (min-width: 850px) { /* ← 条件を 850px 以上に変更しました */
+
+  .siteName {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 10rem; /* PCサイズ */
+    /* position: absolute;
+    top: 10px;
+    left: 10px; */
+    text-decoration: none;
+    line-height: 1;  /* 文字の余計な上下余白を消して下端に密着させる */
+    margin-bottom: -1.7rem;
+  }
+
+  /* 1. 3本ラインボタン（スマホ用）を完全に消す */
+  .three-lines-reader {
+    display: none !important;
+  }
+
+  /* 2. 親コンテナをヘッダーいっぱいに広げ、中身を「下詰め」にする */
+  .reader-container {
+    height: 100%;                /* ヘッダーの高さ100pxいっぱいに広げる */
+    justify-content: flex-end;   /* 中身（メニュー）を一番下（底辺）に沈める */
+  }
+
+  /* 3. メニューコンテナをPC用の横並びヘッダーにする */
+  .menu-container {
+    display: block !important; 
+    position: static;          
+    width: auto;
+    height: auto;
+    background: none;          
+    margin-bottom: -1rem;  
+  }
+
+  .menu-container nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* メニュー項目を横並びにする */
+  .menu-container nav ul {
+    display: flex;             
+    gap: 0; 
+  }
+
+  .menu-container nav ul li {
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  /* メニューの文字と縦線の設定 */
+  .menu-container nav ul li a {
+    color: white;
+    font-size: 2.5rem;       
+    text-decoration: none;
+    padding: 0 20px;          /* 文字の左右の余白（ぶつからないように少しタイトに調整） */
+    border-right: 1px solid rgba(255, 255, 255, 0.6); /* 項目間の縦線 */
+    line-height: 1;
+  }
+
+  /* 一番最後の項目（Contact）の右側の縦線は消す */
+  .menu-container nav ul li:last-child a {
+    border-right: none;
+  }
+
+  .menu-container nav ul li a:hover {
+    color: yellow;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+}
+
+
+/* ==========================================
+   About Me ページ専用スタイル
+   ========================================== */
+
+/* 下層ページ用のスリムなヘッダー背景調整 */
+/* .about-top {
+  height: 400px; 
+} */
+
+/* プロフィール全体のコンテナ */
+.about-container {
+  width: 90%;
+  max-width: 800px; /* 読みやすさを考慮したジャストな横幅 */
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* セクション同士のゆったりとした間隔 */
+  margin-top: 50px;
+}
+
+/* 各セクションの共通ベース（ガラスモーフィズム） */
+.about-section {
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-5px);
+}
+
+/* 英語のカテゴリ見出し */
+.section-title-en {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.section-title-en::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+}
+
+/* ------------------------------------------
+   カラーバリエーションの指定
+   ------------------------------------------ */
+
+/* 1. 名前（黒ベース）：締まりのあるシックなデザイン */
+.profile-name-box {
+  background-color: rgba(26, 26, 26, 0.85); /* 深みのある黒 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.profile-name-box .section-title-en {
+  color: #ffffff;
+}
+.profile-name-box .section-title-en::after {
+  background-color: #ffffff;
+}
+
+/* 2. 経歴（薄い緑ベース）：全体の緑に調和するナチュラルカラー */
+.profile-career-box {
+  background-color: rgba(220, 245, 225, 0.75); /* 透き通る薄い緑 */
+  border: 1px solid rgba(12, 213, 12, 0.2);
+  box-shadow: 0 10px 30px rgba(12, 213, 12, 0.15);
+}
+.profile-career-box .section-title-en {
+  color: #1b4d22; /* 深いオリーブグリーン */
+}
+.profile-career-box .section-title-en::after {
+  background-color: #1b4d22;
+}
+
+/* 3. 関連リンク（スカイブルーベース）：視認性を高めるアクセントカラー */
+.profile-links-box {
+  background-color: rgba(215, 243, 255, 0.75); /* 爽やかなスカイブルー */
+  border: 1px solid rgba(62, 156, 242, 0.2);
+  box-shadow: 0 10px 30px rgba(62, 156, 242, 0.15);
+}
+.profile-links-box .section-title-en {
+  color: #0b4b7b; /* 深いブルー */
+}
+.profile-links-box .section-title-en::after {
+  background-color: #0b4b7b;
+}
+
+/* ------------------------------------------
+   各コンテンツのディテール設定
+   ------------------------------------------ */
+
+/* 名前のテキスト設定 */
+.profile-main-name {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #ffffff;
+  font-size: 3.2rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+.profile-sub-name {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.8rem;
+  margin-top: 5px;
+}
+
+/* 経歴のタイムライン設定 */
+.career-timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.career-timeline li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #2c3e50;
+}
+.career-timeline .year {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: #1b4d22;
+  font-size: 1.8rem;
+}
+.career-timeline .desc {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* 関連リンクのボタン設定 */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+}
+/* リンクボタンの個別カラー（文字色を統一しつつ、背景で個性を出す） */
+.link-item.github {
+  background-color: #24292e;
+  color: #ffffff;
+}
+.link-item.x-sns {
+  background-color: #111111;
+  color: #ffffff;
+}
+.link-item.blog {
+  background-color: rgba(12, 213, 12, 0.8);
+  color: #ffffff;
+}
+.link-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  opacity: 0.9;
+}
+.link-icon {
+  font-size: 2rem;
+}
+
+/* ------------------------------------------
+   PC・タブレット向けのレスポンシブ微調整
+   ------------------------------------------ */
+@media screen and (min-width: 768px) {
+  .about-container {
+    margin-top: 100px;
+  }
+  .about-section {
+    padding: 50px 40px;
+  }
+  .career-timeline li {
+    flex-direction: row; /* 横並びにしてスマートに */
+    gap: 30px;
+  }
+  .career-timeline .year {
+    min-width: 130px; /* 年数の幅を固定 */
+  }
+}

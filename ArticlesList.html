@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YNote - Article List</title>
+    <link rel="stylesheet" href="ArticleListStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top">
+        <div class="header">
+            <a href="index.html" class="siteName">YNote</a>
+            <div class="reader-container">
+                <div class="three-lines-reader" id="menuButton">
+                    <span><hr class="hr1"></span>
+                    <span><hr class="hr2"></span>
+                    <span><hr class="hr3"></span>
+                </div>
+                <div class="menu-container" id="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Article List</a></li>
+                            <li><a href="AboutMe.html">About Me</a></li>
+                            <li><a href="index.html#Contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="textContainer">
+            <h1>Love the life you live. Live the life you love.</h1> <!--変更予定-->
+            <h2>― Bob Marley ―</h2>
+        </div>
+    </div>
+    <!-- <div class="parent"> -->
+        <div class="frame">
+
+            <!-- <section> -->
+                <div class="textAnimation articleList">Article List</div>
+                <div class="search-area">
+                    <input type="text" id="searchInput" placeholder="キーワードを入力(スペース区切り)">
+                    <button id="searchButton">検索</button>
+                    <div id="searchPOptions">
+                        <label><input type="radio" name="mode" class="radioButton" value="or" checked>OR検索</label>
+                        <label><input type="radio" name="mode" class="radioButton" value="and">AND検索</label>
+                    </div>
+                </div>
+                <div class="container">
+
+                </div>
+                <div class="pagination"></div>
+        </div>
+    <!-- </div> -->
+    <footer>
+        <p>© 2025 Hiroki Yoshidome</p>
+    </footer>
+    <script src="menubutton.js"></script>
+    <!-- <script type="module" src="articleListPagination.js"></script> -->
+
+    <script type="module" src="articleListFunction.js"></script>
+</body>
+</html>
